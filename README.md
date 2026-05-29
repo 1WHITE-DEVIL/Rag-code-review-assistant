@@ -329,5 +329,5 @@ The architecture deliberately avoids the naive RAG implementation — fixed-size
 
 ## Author
 
-**Aditya Gupta** — Final Year CS (AI), BIT Bhilai  
+**Aditya Gupta** —  CS (AI), BIT Durg  
 [LinkedIn](https://www.linkedin.com/in/aditya-gupta-74b6b7171) · [GitHub](https://github.com/1WHITE-DEVIL)
