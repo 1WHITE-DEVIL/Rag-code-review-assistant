@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=DM+Sans:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-base: #0a0b0d;
+  --bg-surface: #111318;
+  --bg-elevated: #1a1d24;
+  --bg-border: #252830;
+  --accent-green: #00d97e;
+  --accent-blue: #4d9eff;
+  --accent-amber: #f5a623;
+  --accent-red: #ff4d4d;
+  --text-primary: #e8eaf0;
+  --text-secondary: #8b909e;
+  --text-dim: #4a4f5c;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --font-sans: 'DM Sans', system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg-base);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+pre, code {
+  font-family: var(--font-mono);
+  color: var(--text-primary);
+}
+
+::selection {
+  background: rgba(0, 217, 126, 0.25);
+  color: var(--text-primary);
+}
+
+/* Thin scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-border); }
+::-webkit-scrollbar-thumb { background: var(--text-dim); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-secondary); }
+
+/* Page enter animation */
+@keyframes page-enter {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.page-enter {
+  animation: page-enter 300ms ease-out forwards;
+}
+
+/* CSS spinner — two-arc trick */
+@keyframes spin-arc {
+  to { transform: rotate(360deg); }
+}
+
+.spinner {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--bg-border);
+  border-top-color: var(--accent-green);
+  border-right-color: var(--accent-green);
+  border-radius: 50%;
+  animation: spin-arc 650ms linear infinite;
+  flex-shrink: 0;
+}
+
+.spinner-lg {
+  width: 36px;
+  height: 36px;
+  border-width: 3px;
+}
+
+/* Subtle grid overlay for hero sections */
+.grid-overlay {
+  background-image:
+    linear-gradient(rgba(37, 40, 48, 0.5) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(37, 40, 48, 0.5) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
